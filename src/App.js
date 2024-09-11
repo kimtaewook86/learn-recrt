@@ -1,6 +1,6 @@
 import ThemeButton from "./components/ThemeButton";
 import Card from "./components/Card";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 function App() {
 //   console.log("App.js");
@@ -143,6 +143,12 @@ setIsDarkMode(!isDarkMode);
 };
 
 const handleClick = () => {}
+
+useEffect(() => {
+  console.log(isDarkMode ? "다크모드" : 
+    "라이트 모드");
+}, [isDarkMode]);
+
 // view
 return (
   <div className={`wrap ${isDarkMode ? "dark-mode" 
